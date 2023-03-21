@@ -1,0 +1,35 @@
+.Navbar-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+}
+
+.Navbar-logo {
+  margin: 40px;
+}
+
+.Navbar-Links ul li {
+  list-style: none;
+  display: inline;
+  margin: 25px;
+  /* padding: 5px; */
+  /* background-color: blue; */
+}
+
+.Navbar-Links {
+  margin: 25px;
+}
+
+.main-container {
+  /* display: inline-block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 35%;
+  height:40%;
+  margin: auto;
+  background-color: white; */
+}
