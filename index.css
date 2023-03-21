@@ -13,8 +13,14 @@
   list-style: none;
   display: inline;
   margin: 25px;
+  text-decoration: none;
   /* padding: 5px; */
   /* background-color: blue; */
+}
+
+.Navbar-Links ul li a {
+ color: white;
+ text-decoration: none;
 }
 
 .Navbar-Links {
