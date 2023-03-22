@@ -18,3 +18,26 @@
 .Navbar-Links {
   margin: 25px;
 }
+
+
+.Navbar-Links ul li a {
+   color:white;
+   text-decoration: none;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: space-between;
+  color:blue
+}
+
+input {
+  margin: 5px;
+  width:15%;
+  padding: 10px;;
+}
+
+.gallery-content {
+  /* display: grid;
+  width:50%; */
+}

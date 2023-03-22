@@ -7,10 +7,8 @@ function setError(id,message) {
 }
 
 
-
-
-
 function ValidateLoginForm() {
+  debugger
   let val = true;
   
   let username = document.forms["loginForm"]["username"].value;  
@@ -30,16 +28,13 @@ function ValidateLoginForm() {
     setError('password', 'Invalid Password')
     val = false;
   }
-  function auth(val) {
+  
   if(username.match(user.email) && password.match(user.password)) {
-    window.location.replace("../Gallery/index.js");
+     window.open(`../Gallery/index.html`);
   }
   
   if(!username.match(user.email) && password.match(user.password)) {
     setError('password', 'Invalid User')  
   }
-  return val;
-}
-  return auth;
 }
  
