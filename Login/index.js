@@ -8,7 +8,7 @@ function setError(id,message) {
 
 
 function ValidateLoginForm() {
-  debugger
+  // debugger
   let val = true;
   
   let username = document.forms["loginForm"]["username"].value;  

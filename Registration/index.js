@@ -54,7 +54,8 @@ function validateForm() {
     setError('confirmPassword', 'Password and Confirm  Password is not the same')
     val = false;
   }
-  const formData = {firstName,lastName,email,password,confirmPassword}
+  
+  const formData = {id,firstName,lastName,email,password,confirmPassword}
   console.log('formData',formData)
   localStorage.setItem('formData',JSON.stringify(formData))
   return val;

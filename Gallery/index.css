@@ -41,3 +41,17 @@ input {
   /* display: grid;
   width:50%; */
 }
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.list div {
+  display :flex;
+  justify-content:space-evenly;
+  margin:10px;
+  width:100%
+}
+.list span {
+  width:10%
+}
