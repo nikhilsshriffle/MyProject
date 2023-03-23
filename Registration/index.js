@@ -4,11 +4,12 @@ function setError(id, message) {
 }
 
 function validateForm() {
+  // debugger
   let val = true;
 
   let firstName = document.forms["myForm"]["fname"].value;
   let lastName = document.forms["myForm"]["lname"].value;
-  let email = document.forms["myForm"]["email"].value;
+  let email = document.forms["myForm"]["useremail"].value;
   let password = document.forms["myForm"]["psw"].value;
   let confirmPassword  = document.forms["myForm"]["psw_Confirm"].value;
 
@@ -24,12 +25,12 @@ function validateForm() {
   //   setError('confirmPassword','Empty Field')
   // }
 
-  if (firstName === "" || firstName.length <5) {
+  if (firstName === "" || firstName.length <3) {
      setError('firstName','Invalid First Name')
      val = false;
   }
 
-  if (lastName === "" || lastName.length <5) {
+  if (lastName === "" || lastName.length <3) {
     setError('lastName','Invalid Last Name')
     val = false;
   }
@@ -46,7 +47,7 @@ function validateForm() {
   }
 
   if (confirmPassword<6 || confirmPassword  === "" ) {
-    setError('password', 'Invalid Password')
+    setError('confirmPassword', 'Invalid Confirm Password')
     val = false;
   }
 
@@ -54,10 +55,14 @@ function validateForm() {
     setError('confirmPassword', 'Password and Confirm  Password is not the same')
     val = false;
   }
-  
-  const formData = {id,firstName,lastName,email,password,confirmPassword}
+
+  let id ;
+
+  const formData = [{userid:id=1,firstName,lastName,email,password}]
+  id++;
   console.log('formData',formData)
   localStorage.setItem('formData',JSON.stringify(formData))
+  // let mainid = userid++
   return val;
 
 }

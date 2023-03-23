@@ -3,8 +3,10 @@
 
 let current_page = 1;
 let rows = 10;
+// const list_element = document.getElementById('list');
+// const pagination_element = document.getElementById('pagination');
 
-function DisplayList (items, wrapper, rows_per_page, page) {
+function displayList (items, wrapper, rows_per_page, page) {
   console.log('items',items)
   console.log('rows_per_page',rows_per_page)
   console.log('page',page)
@@ -28,6 +30,15 @@ function DisplayList (items, wrapper, rows_per_page, page) {
 	}
 }
 
+function displayPagination(wrapper,count,items) {
+  // console.log('g1',count)
+  // console.log('g2',items)
+  	for (let i = 1; i < count + 1; i++) {
+		let btn = PaginationButton(i, items);
+		wrapper.appendChild(btn);
+	}
+}
+
 function SetupPagination (items, wrapper, rows_per_page) {
 	// wrapper.showData = "";
   console.log('items.length',items.length)
@@ -35,18 +46,21 @@ function SetupPagination (items, wrapper, rows_per_page) {
   let page_Count = 10 
   let leftarrowBtn = document.createElement('button');
   leftarrowBtn.innerHTML ='<'
-  if (page_Count ===10) {
-  leftarrowBtn.style.display = 'none';
-  }
-  else {
-    leftarrowBtn.style.display ='block'
-  }
+  // if (page_Count ===10) {
+  // leftarrowBtn.style.display = 'none';
+  // }
+  // else {
+  //   leftarrowBtn.style.display ='block'
+  // }
   wrapper.appendChild(leftarrowBtn)
 
-	for (let i = 1; i < page_Count + 1; i++) {
-		let btn = PaginationButton(i, items);
-		wrapper.appendChild(btn);
-	}
+  displayPagination(wrapper,page_Count,items)
+
+
+	// for (let i = 1; i < page_Count + 1; i++) {
+	// 	let btn = PaginationButton(i, items);
+	// 	wrapper.appendChild(btn);
+	// }
 
   let rightarrowBtn = document.createElement('button');
   rightarrowBtn.innerHTML ='>'
@@ -54,6 +68,11 @@ function SetupPagination (items, wrapper, rows_per_page) {
   rightarrowBtn.addEventListener('click', function () {
     console.log('page_Count',page_Count)
     page_Count = page_Count + 1;
+    // console.log('wrapper',wrapper)
+    // console.log('page_Count',page_Count)
+    // console.log('data',items)
+   let scrollPaginationbtn = PaginationButton(page_Count,items)
+   wrapper.appendChild(scrollPaginationbtn);
   })
 
   wrapper.appendChild(rightarrowBtn)
@@ -71,7 +90,7 @@ function PaginationButton (page, items) {
 	button.addEventListener('click', function () {
 		current_page = page;
     console.log('current_page',current_page)
-		DisplayList(items, list_element, rows, current_page);
+		displayList(items, list_element, rows, current_page);
 
 		let current_btn = document.querySelector('.pagenumbers button.active');
 		// current_btn.classList.remove('active');
@@ -89,7 +108,7 @@ function PaginationButton (page, items) {
 function setFilterData(showData) {
   const list_element = document.getElementById('list');
   const pagination_element = document.getElementById('pagination');
-  DisplayList(showData, list_element, rows, current_page);
+  displayList(showData, list_element, rows, current_page);
   SetupPagination(showData, pagination_element, rows);
 
 }
